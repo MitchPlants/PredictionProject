@@ -20,6 +20,31 @@ public class PredictionProject {
         k = year%100;
         j = year/100;
         h = (q+((13*(m+1))/5)+k+(k/4)+(j/4)-2*j)%7;
+        switch(h){
+            case 1:
+                Day = "Sunday";
+
+                break;
+            case 2:
+                Day = "Monday";
+                break;
+            case 3:
+                Day = "Tuesday";
+                break;
+            case 4:
+                Day = "Wednesday";
+                break;
+            case 5:
+                Day = "Thursday";
+                break;
+            case 6:
+                Day = "Friday";
+                break;
+            default:
+                Day = "Saturday";
+                break;
+        }
+        System.out.println(m+"/"+q+"/"+year+" is a "+Day);
 
     }
 }
