@@ -7,37 +7,39 @@ public class PredictionProject {
         //todo H = day of the week, Q = day of the month, M = the month, k = year of the century (year mod 100),
         //todo J = Zero based century (year/100)
         //todo h = (q+[13(m+1)/5]+k+[k/4]+[j/4]-2j)mod 7
-        int h, q, m, k, j, year;
-        String Child;
-        String Day;
-        Scanner Keyboard;
-        String Month;
-        int NumberOfDays;
-        Keyboard = new Scanner(System.in);
-        System.out.println("Monday's child is fair of face,\n" +
-                "Tuesday's child is full of grace,\n" +
-                "Wednesday's child is full of woe,\n" +
-                "Thursday's child has far to go.\n" +
-                "Friday's child is loving and giving,\n" +
-                "Saturday's child works hard for a living,\n" +
-                "But the child born on the Sabbath Day,\n" +
-                "Is fair and wise and good in every way.\n");
+        do {
+            int h, q, m, k, j, year;
+            String Child;
+            String Day;
+            Scanner Keyboard;
+            String Month;
+            int NumberOfDays;
+            Keyboard = new Scanner(System.in);
+            System.out.println("Monday's child is fair of face,\n" +
+                    "Tuesday's child is full of grace,\n" +
+                    "Wednesday's child is full of woe,\n" +
+                    "Thursday's child has far to go.\n" +
+                    "Friday's child is loving and giving,\n" +
+                    "Saturday's child works hard for a living,\n" +
+                    "But the child born on the Sabbath Day,\n" +
+                    "Is fair and wise and good in every way.\n");
 
-        System.out.println("Day of the month you were born?");
-        q = Keyboard.nextInt();
-        System.out.println("The birth month as a number?");
-        m = Keyboard.nextInt();
-        System.out.println("The year you were born?");
-        year = Keyboard.nextInt();
+            System.out.println("Day of the month you were born?");
+            q = Keyboard.nextInt();
+            System.out.println("The birth month as a number?");
+            m = Keyboard.nextInt();
+            System.out.println("The year you were born?");
+            year = Keyboard.nextInt();
 
-        k = year % 100;
-        j = year / 100;
-        h = (q + ((13 * (m + 1)) / 5) + k + (k / 4) + (j / 4) - 2 * j) % 7;
+            k = year % 100;
+            j = year / 100;
+            h = (q + ((13 * (m + 1)) / 5) + k + (k / 4) + (j / 4) - 2 * j) % 7;
 
-        Day = days(h);
-        System.out.println(m + "/" + q + "/" + year + " is a " + Day);
-        System.out.println(MonthDays(m, year));
-        System.out.println(children(h));
+            Day = days(h);
+            System.out.println(m + "/" + q + "/" + year + " is a " + Day);
+            System.out.println(MonthDays(m, year));
+            System.out.println(children(h));
+        }while(true);
     }
 
 
