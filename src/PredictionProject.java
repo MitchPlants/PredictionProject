@@ -8,6 +8,7 @@ public class PredictionProject {
         //todo J = Zero based century (year/100)
         //todo h = (q+[13(m+1)/5]+k+[k/4]+[j/4]-2j)mod 7
         int h, q, m, k, j, year;
+        String Child;
         String Day;
         Scanner Keyboard;
         String Month;
@@ -22,11 +23,11 @@ public class PredictionProject {
                 "But the child born on the Sabbath Day,\n" +
                 "Is fair and wise and good in every way.\n");
 
-        System.out.println("Day of the month?");
+        System.out.println("Day of the month you were born?");
         q = Keyboard.nextInt();
-        System.out.println("The month as a number?");
+        System.out.println("The birth month as a number?");
         m = Keyboard.nextInt();
-        System.out.println("The year?");
+        System.out.println("The year you were born?");
         year = Keyboard.nextInt();
 
         k = year % 100;
@@ -35,13 +36,41 @@ public class PredictionProject {
 
         Day = days(h);
         System.out.println(m + "/" + q + "/" + year + " is a " + Day);
-        System.out.println(MonthDays(m,year));
-        
-
+        System.out.println(MonthDays(m, year));
+        System.out.println(children(h));
     }
-    public static String MonthDays(int m,int year) {
+
+
+    public static String children(int h) {
+        String Child;
+        switch (h) {
+            case 1:
+                Child = "Your fair and wise and good in every way";
+                break;
+            case 2:
+                Child = "Your fair of face";
+                break;
+            case 3:
+                Child = "Your full of grace";
+                break;
+            case 4:
+                Child = "Your full of woe";
+                break;
+            case 5:
+                Child = "You have far to go";
+                break;
+            case 6:
+                Child = "Your loving and giving";
+                break;
+            default:
+                Child = "You work hard for a living";
+        }
+        return Child;
+    }
+
+
+    public static String MonthDays(int m, int year) {
         String Month;
-        String NumberOfDays;
         switch (m) {
             case 1:
             case 13:
@@ -115,35 +144,33 @@ public class PredictionProject {
     }
 
 
-
-
-// # that's on . luv ;D XDDD swag what's up homie watch we whip watch me nae neighhhhh im a horse what it do baybeeeeeee -Moira Taylor
-        public static String days(int h){
+    // # that's on . luv ;D XDDD swag what's up homie watch we whip watch me nae neighhhhh im a horse what it do baybeeeeeee -Moira Taylor
+    public static String days(int h) {
         String WeekDay;
-            switch (h) {
-                case 1:
-                    WeekDay = "Sunday";
-                    break;
-                case 2:
-                    WeekDay = "Monday";
-                    break;
-                case 3:
-                    WeekDay = "Tuesday";
-                    break;
-                case 4:
-                    WeekDay = "Wednesday";
-                    break;
-                case 5:
-                    WeekDay = "Thursday";
-                    break;
-                case 6:
-                    WeekDay = "Friday";
-                    break;
-                default:
-                    WeekDay = "Saturday";
-                    break;
+        switch (h) {
+            case 1:
+                WeekDay = "Sunday";
+                break;
+            case 2:
+                WeekDay = "Monday";
+                break;
+            case 3:
+                WeekDay = "Tuesday";
+                break;
+            case 4:
+                WeekDay = "Wednesday";
+                break;
+            case 5:
+                WeekDay = "Thursday";
+                break;
+            case 6:
+                WeekDay = "Friday";
+                break;
+            default:
+                WeekDay = "Saturday";
+                break;
 
-            }
-            return WeekDay;
+        }
+        return WeekDay;
     }
 }
